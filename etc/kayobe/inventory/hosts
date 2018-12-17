@@ -5,7 +5,7 @@ localhost ansible_connection=local
 seed
 
 [controllers]
-controller0
+#controller0
 
 [compute]
 controller0
