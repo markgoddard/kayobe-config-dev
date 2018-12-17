@@ -3,3 +3,6 @@
 # guarantee that nested KVM support is available. Use QEMU as a lowest common
 # denominator.
 nova_compute_virt_type: qemu
+
+# Use a specific tag for the bifrost-deploy container.
+bifrost_deploy_tag: 4.0.2
