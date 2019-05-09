@@ -4,6 +4,8 @@
 
 # Specify the list of hardware types to load during service initialization.
 #kolla_ironic_enabled_hardware_types:
+kolla_ironic_enabled_hardware_types:
+  - idrac
 
 # Specify the list of boot interfaces to load during service initialization.
 #kolla_ironic_enabled_boot_interfaces:
@@ -13,11 +15,12 @@
 #kolla_ironic_default_boot_interface:
 
 # Specify the list of console interfaces to load during service initialization.
-#kolla_ironic_enabled_console_interfaces:
+kolla_ironic_enabled_console_interfaces:
+  - no-console
 
 # Default console interface to be used for nodes that do not have
 # console_interface field set.
-#kolla_ironic_default_console_interface:
+kolla_ironic_default_console_interface: no-console
 
 # Specify the list of deploy interfaces to load during service initialization.
 #kolla_ironic_enabled_deploy_interfaces:
@@ -35,11 +38,13 @@
 
 # Specify the list of management interfaces to load during service
 # initialization.
-#kolla_ironic_enabled_management_interfaces:
+kolla_ironic_enabled_management_interfaces:
+  - idrac
+  - ipmitool
 
 # Default management interface to be used for nodes that do not have
 # management_interface field set.
-#kolla_ironic_default_management_interface:
+kolla_ironic_default_management_interface: idrac
 
 # Specify the list of network interfaces to load during service initialization.
 #kolla_ironic_enabled_network_interfaces:
@@ -50,17 +55,21 @@
 
 # Specify the list of power interfaces to load during service initialization.
 #kolla_ironic_enabled_power_interfaces:
+kolla_ironic_enabled_power_interfaces:
+  - idrac
+  - ipmitool
 
 # Default power interface to be used for nodes that do not have power_interface
 # field set.
-#kolla_ironic_default_power_interface:
+kolla_ironic_default_power_interface: idrac
 
 # Specify the list of raid interfaces to load during service initialization.
-#kolla_ironic_enabled_raid_interfaces:
+kolla_ironic_enabled_raid_interfaces:
+  - idrac
 
 # Default raid interface to be used for nodes that do not have
 # raid_interface field set.
-#kolla_ironic_default_raid_interface:
+kolla_ironic_default_raid_interface: idrac
 
 # Specify the list of rescue interfaces to load during service initialization.
 #kolla_ironic_enabled_rescue_interfaces:
@@ -78,11 +87,12 @@
 #kolla_ironic_default_storage_interface:
 
 # Specify the list of vendor interfaces to load during service initialization.
-#kolla_ironic_enabled_vendor_interfaces:
+kolla_ironic_enabled_vendor_interfaces:
+  - idrac
 
 # Default vendor interface to be used for nodes that do not have
 # vendor_interface field set.
-#kolla_ironic_default_vendor_interface:
+kolla_ironic_default_vendor_interface: idrac
 
 # Default boot option to use when no boot option is requested in node's
 # driver_info.
