@@ -1,4 +1,45 @@
----
-aio_ips:
-  controller0: 192.168.33.3
-  seed: 192.168.33.5
+internal_ips:
+  compute0: 192.168.37.6
+  compute1: 192.168.37.7
+  compute2: 192.168.37.8
+  controller0: 192.168.37.3
+  controller1: 192.168.37.4
+  controller2: 192.168.37.5
+  storage0: 192.168.37.9
+  storage1: 192.168.37.10
+  storage2: 192.168.37.11
+provision_oc_ips:
+  compute0: 192.168.122.100
+  compute1: 192.168.122.101
+  compute2: 192.168.122.102
+  controller0: 192.168.122.20
+  controller1: 192.168.122.21
+  controller2: 192.168.122.22
+  storage0: 192.168.122.40
+  storage1: 192.168.122.41
+  storage2: 192.168.122.42
+public_ips:
+  controller0: 192.168.39.3
+  controller1: 192.168.39.4
+  controller2: 192.168.39.5
+storage_ips:
+  compute0: 192.168.41.4
+  compute1: 192.168.41.5
+  compute2: 192.168.41.6
+  controller0: 192.168.41.1
+  controller1: 192.168.41.2
+  controller2: 192.168.41.3
+  storage0: 192.168.41.7
+  storage1: 192.168.41.8
+  storage2: 192.168.41.9
+storage_mgmt_ips:
+  storage0: 192.168.42.1
+  storage1: 192.168.42.2
+  storage2: 192.168.42.3
+tunnel_ips:
+  compute0: 192.168.40.4
+  compute1: 192.168.40.5
+  compute2: 192.168.40.6
+  controller0: 192.168.40.1
+  controller1: 192.168.40.2
+  controller2: 192.168.40.3

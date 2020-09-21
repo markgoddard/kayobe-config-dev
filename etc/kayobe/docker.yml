@@ -3,7 +3,7 @@
 # Docker configuration.
 
 # Name of the docker storage driver. Default is 'devicemapper'.
-docker_storage_driver: overlay
+docker_storage_driver: overlay2
 
 # Name of the docker storage LVM volume group.
 #docker_storage_volume_group:
@@ -22,7 +22,7 @@ docker_storage_driver: overlay
 #docker_storage_volume_thinpool_meta_size:
 
 # URL of docker registry
-#docker_registry:
+docker_registry: 10.60.253.150:5000
 
 # CA of docker registry
 #docker_registry_ca:

@@ -121,12 +121,30 @@
 # concatenation of the top level, component, and service inventories.
 #kolla_overcloud_inventory_custom:
 
+# Don't give storage nodes to kolla-ansible - we're using Ceph-ansible.
+kolla_overcloud_inventory_storage_groups: []
+
 # Dict mapping from kolla-ansible groups to kayobe groups and variables. Each
 # item is a dict with the following items:
 # * groups: A list of kayobe ansible groups to map to this kolla-ansible group.
 # * vars: A dict mapping variable names to values for hosts in this
 #         kolla-ansible group.
-#kolla_overcloud_inventory_top_level_group_map:
+kolla_overcloud_inventory_top_level_group_map:
+  control:
+    groups:
+      - controllers
+  network:
+    groups:
+      - network
+  compute:
+    groups:
+      - compute
+  monitoring:
+    groups:
+      - controllers
+  storage:
+    groups:
+      "{{ kolla_overcloud_inventory_storage_groups }}"
 
 # List of names of top level kolla-ansible groups. Any of these groups which
 # have no hosts mapped to them will be provided with an empty group definition.
@@ -193,7 +211,7 @@
 #kolla_enable_heat:
 #kolla_enable_horizon:
 #kolla_enable_influxdb:
-#kolla_enable_ironic:
+kolla_enable_ironic: false
 #kolla_enable_ironic_ipxe:
 #kolla_enable_ironic_pxe_uefi:
 #kolla_enable_iscsid:
@@ -217,6 +235,7 @@
 #kolla_enable_neutron_fwaas:
 #kolla_enable_neutron_lbaas:
 #kolla_enable_neutron_provider_networks:
+kolla_enable_neutron_provider_networks: true
 #kolla_enable_neutron_qos:
 #kolla_enable_neutron_segments:
 #kolla_enable_neutron_sriov:

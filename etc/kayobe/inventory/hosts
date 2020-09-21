@@ -7,13 +7,21 @@ localhost ansible_connection=local
 # Virtual Machine.
 
 [seed]
-seed
 
 [controllers]
 controller0
+controller1
+controller2
 
-[compute:children]
-controllers
+[compute]
+compute0
+compute1
+compute2
+
+[storage]
+storage0
+storage1
+storage2
 
 [baremetal-compute]
 # Add baremetal compute nodes here if required.
