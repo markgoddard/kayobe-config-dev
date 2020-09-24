@@ -6,15 +6,11 @@ provision_oc_interface: breth0
 provision_oc_bridge_ports:
   - eth0
 
-external_interface: breth0
-external_bridge_ports:
-  - eth0
+internal1_interface: "eth0.{{ internal1_vlan }}"
  
-internal_interface: "eth0.{{ internal_vlan }}"
+storage1_interface: "eth0.{{ storage1_vlan }}"
  
-storage_interface: "eth0.{{ storage_vlan }}"
- 
-tunnel_interface: "eth0.{{ tunnel_vlan }}"
+tunnel1_interface: "eth0.{{ tunnel1_vlan }}"
 
 ###############################################################################
 # Dummy variable to allow Ansible to accept this file.

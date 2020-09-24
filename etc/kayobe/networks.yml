@@ -31,7 +31,6 @@ provision_wl_net_name:
 
 # Name of the network used to expose the internal OpenStack API endpoints.
 #internal_net_name:
-internal_net_name: internal
 
 # List of names of networks used to provide external network access via
 # Neutron.
@@ -48,15 +47,12 @@ public_net_name: public
 
 # Name of the network used by Neutron to carry tenant overlay network traffic.
 #tunnel_net_name:
-tunnel_net_name: tunnel
 
 # Name of the network used to carry storage data traffic.
 #storage_net_name:
-storage_net_name: storage
 
 # Name of the network used to carry storage management traffic.
 #storage_mgmt_net_name:
-storage_mgmt_net_name: storage_mgmt
 
 # Name of the network used to perform hardware introspection on the bare metal
 # workload hosts.
@@ -77,13 +73,27 @@ provision_oc_mtu: 1450
 provision_oc_physical_network: physnet1
 provision_oc_gateway: 192.168.122.1
 
-internal_cidr: 192.168.37.0/24
-internal_mtu: 1450
-internal_allocation_pool_start: 192.168.37.3
-internal_allocation_pool_end: 192.168.37.254
-internal_vip_address: 192.168.37.2
-internal_vlan: 101
-internal_physical_network: physnet1
+internal1_cidr: 192.168.37.0/24
+internal1_mtu: 1450
+internal1_allocation_pool_start: 192.168.37.3
+internal1_allocation_pool_end: 192.168.37.254
+internal1_vlan: 101
+internal1_physical_network: physnet1
+internal1_routes:
+  - cidr: "{{ internal2_cidr }}"
+    gateway: 192.168.37.1
+
+internal2_cidr: 192.168.43.0/24
+internal2_mtu: 1450
+internal2_allocation_pool_start: 192.168.43.3
+internal2_allocation_pool_end: 192.168.43.254
+internal2_allocation_pool_start: 192.168.43.3
+internal2_allocation_pool_end: 192.168.43.254
+internal2_vlan: 107
+internal2_physical_network: physnet1
+internal2_routes:
+  - cidr: "{{ internal1_cidr }}"
+    gateway: 192.168.43.1
 
 #external_cidr: 192.168.38.0/24
 external_mtu: 1450
@@ -94,24 +104,68 @@ public_cidr: 192.168.39.0/24
 public_mtu: 1450
 public_allocation_pool_start: 192.168.39.3
 public_allocation_pool_end: 192.168.39.254
-public_vip_address: 192.168.39.2
 public_vlan: 103
 public_physical_network: physnet1
 
-tunnel_cidr: 192.168.40.0/24
-tunnel_mtu: 1450
-tunnel_vlan: 104
-tunnel_physical_network: physnet1
+tunnel1_cidr: 192.168.40.0/24
+tunnel1_mtu: 1450
+tunnel1_allocation_pool_start: 192.168.40.3
+tunnel1_allocation_pool_end: 192.168.40.254
+tunnel1_vlan: 104
+tunnel1_physical_network: physnet1
+tunnel1_routes:
+  - cidr: "{{ tunnel2_cidr }}"
+    gateway: 192.168.40.1
 
-storage_cidr: 192.168.41.0/24
-storage_mtu: 1450
-storage_vlan: 105
-storage_physical_network: physnet1
+tunnel2_cidr: 192.168.44.0/24
+tunnel2_mtu: 1450
+tunnel2_allocation_pool_start: 192.168.44.3
+tunnel2_allocation_pool_end: 192.168.44.254
+tunnel2_vlan: 108
+tunnel2_physical_network: physnet1
+tunnel2_routes:
+  - cidr: "{{ tunnel1_cidr }}"
+    gateway: 192.168.44.1
 
-storage_mgmt_cidr: 192.168.42.0/24
-storage_mgmt_mtu: 1450
-storage_mgmt_vlan: 106
-storage_mgmt_physical_network: physnet1
+storage1_cidr: 192.168.41.0/24
+storage1_mtu: 1450
+storage1_allocation_pool_start: 192.168.41.3
+storage1_allocation_pool_end: 192.168.41.254
+storage1_vlan: 105
+storage1_physical_network: physnet1
+storage1_routes:
+  - cidr: "{{ storage2_cidr }}"
+    gateway: 192.168.41.1
+
+storage2_cidr: 192.168.45.0/24
+storage2_mtu: 1450
+storage2_allocation_pool_start: 192.168.45.3
+storage2_allocation_pool_end: 192.168.45.254
+storage2_vlan: 109
+storage2_physical_network: physnet1
+storage2_routes:
+  - cidr: "{{ storage1_cidr }}"
+    gateway: 192.168.45.1
+
+storage_mgmt1_cidr: 192.168.42.0/24
+storage_mgmt1_mtu: 1450
+storage_mgmt1_allocation_pool_start: 192.168.42.3
+storage_mgmt1_allocation_pool_end: 192.168.42.254
+storage_mgmt1_vlan: 106
+storage_mgmt1_physical_network: physnet1
+storage_mgmt1_routes:
+  - cidr: "{{ storage_mgmt2_cidr }}"
+    gateway: 192.168.42.1
+
+storage_mgmt2_cidr: 192.168.46.0/24
+storage_mgmt2_mtu: 1450
+storage_mgmt2_allocation_pool_start: 192.168.46.3
+storage_mgmt2_allocation_pool_end: 192.168.46.254
+storage_mgmt2_vlan: 110
+storage_mgmt2_physical_network: physnet1
+storage_mgmt2_routes:
+  - cidr: "{{ storage_mgmt1_cidr }}"
+    gateway: 192.168.46.1
 
 ###############################################################################
 # Network virtual patch link configuration.

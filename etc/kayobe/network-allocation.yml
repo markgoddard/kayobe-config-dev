@@ -1,13 +1,14 @@
-internal_ips:
-  compute0: 192.168.37.6
-  compute1: 192.168.37.7
-  compute2: 192.168.37.8
+internal1_ips:
+  compute0: 192.168.37.8
   controller0: 192.168.37.3
   controller1: 192.168.37.4
   controller2: 192.168.37.5
-  storage0: 192.168.37.9
-  storage1: 192.168.37.10
-  storage2: 192.168.37.11
+  storage0: 192.168.37.6
+  storage1: 192.168.37.7
+internal2_ips:
+  compute1: 192.168.43.4
+  compute2: 192.168.43.5
+  storage2: 192.168.43.3
 provision_oc_ips:
   compute0: 192.168.122.100
   compute1: 192.168.122.101
@@ -22,24 +23,27 @@ public_ips:
   controller0: 192.168.39.3
   controller1: 192.168.39.4
   controller2: 192.168.39.5
-storage_ips:
-  compute0: 192.168.41.4
-  compute1: 192.168.41.5
-  compute2: 192.168.41.6
-  controller0: 192.168.41.1
-  controller1: 192.168.41.2
+storage1_ips:
+  compute0: 192.168.41.6
+  controller0: 192.168.41.7
+  controller1: 192.168.41.8
   controller2: 192.168.41.3
-  storage0: 192.168.41.7
-  storage1: 192.168.41.8
-  storage2: 192.168.41.9
-storage_mgmt_ips:
-  storage0: 192.168.42.1
+  storage0: 192.168.41.4
+  storage1: 192.168.41.5
+storage2_ips:
+  compute1: 192.168.45.2
+  compute2: 192.168.45.3
+  storage2: 192.168.45.4
+storage_mgmt1_ips:
+  storage0: 192.168.42.3
   storage1: 192.168.42.2
-  storage2: 192.168.42.3
-tunnel_ips:
+storage_mgmt2_ips:
+  storage2: 192.168.46.2
+tunnel1_ips:
   compute0: 192.168.40.4
-  compute1: 192.168.40.5
-  compute2: 192.168.40.6
-  controller0: 192.168.40.1
+  controller0: 192.168.40.5
   controller1: 192.168.40.2
   controller2: 192.168.40.3
+tunnel2_ips:
+  compute1: 192.168.44.3
+  compute2: 192.168.44.2

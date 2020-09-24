@@ -1,0 +1,5 @@
+---
+internal_net_name: internal1
+tunnel_net_name: tunnel1
+storage_net_name: storage1
+storage_mgmt_net_name: storage_mgmt1

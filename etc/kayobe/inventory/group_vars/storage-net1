@@ -4,11 +4,11 @@
 
 provision_oc_interface: eth0
  
-internal_interface: "eth0.{{ internal_vlan }}"
+internal1_interface: "eth0.{{ internal1_vlan }}"
  
-storage_interface: "eth0.{{ storage_vlan }}"
+storage1_interface: "eth0.{{ storage1_vlan }}"
  
-storage_mgmt_interface: "eth0.{{ storage_mgmt_vlan }}"
+storage_mgmt1_interface: "eth0.{{ storage_mgmt1_vlan }}"
 
 ###############################################################################
 # Dummy variable to allow Ansible to accept this file.

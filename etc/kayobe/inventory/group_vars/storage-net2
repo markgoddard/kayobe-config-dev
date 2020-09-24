@@ -1,0 +1,15 @@
+---
+###############################################################################
+# Network interface definitions for the storage group.
+
+provision_oc_interface: eth0
+ 
+internal2_interface: "eth0.{{ internal2_vlan }}"
+ 
+storage2_interface: "eth0.{{ storage2_vlan }}"
+ 
+storage_mgmt2_interface: "eth0.{{ storage_mgmt2_vlan }}"
+
+###############################################################################
+# Dummy variable to allow Ansible to accept this file.
+workaround_ansible_issue_8743: yes

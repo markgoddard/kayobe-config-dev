@@ -13,14 +13,39 @@ controller0
 controller1
 controller2
 
-[compute]
+[compute-net1]
 compute0
+
+[compute-net2]
 compute1
 compute2
 
-[storage]
+[compute:children]
+compute-net1
+compute-net2
+
+[storage-net1]
 storage0
 storage1
+
+[storage-net2]
+storage2
+
+[storage:children]
+storage-net1
+storage-net2
+
+[net1]
+controller0
+controller1
+controller2
+compute0
+storage0
+storage1
+
+[net2]
+compute1
+compute2
 storage2
 
 [baremetal-compute]

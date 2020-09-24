@@ -13,13 +13,13 @@ provision_oc_interface: breth0
 provision_oc_bridge_ports:
   - eth0
 
-internal_interface: "eth0.{{ internal_vlan }}"
+internal1_interface: "eth0.{{ internal1_vlan }}"
 
 external_interface: "breth0.{{ external_vlan }}"
 
 public_interface: "eth0.{{ public_vlan }}"
 public_rules:
-  - "from {{ public_vip_address }} lookup public"
+  - "from {{ kolla_external_vip_address }} lookup public"
 public_routes:
   - cidr: "{{ public_cidr }}"
     table: public
@@ -27,9 +27,9 @@ public_routes:
     gateway: 192.168.39.1
     table: public
 
-storage_interface: "eth0.{{ storage_vlan }}"
+storage1_interface: "eth0.{{ storage1_vlan }}"
 
-tunnel_interface: "eth0.{{ tunnel_vlan }}"
+tunnel1_interface: "eth0.{{ tunnel1_vlan }}"
 
 octavia_interface: "breth0.{{ octavia_vlan }}"
 
